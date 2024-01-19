@@ -2,6 +2,19 @@
 <html>
 <title>My Website</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+<style>
+body {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
 <body>
 
 <div class="w3-container">
@@ -15,6 +28,7 @@
   <button class="w3-bar-item w3-button" onclick="Tab('Skills')">Skills</button>
   <button class="w3-bar-item w3-button" onclick="Tab('Assignments')">Assignments</button>
   <button class="w3-bar-item w3-button" onclick="Tab('Contact Info')">Contact Info</button>
+  <button style="height:40px" onclick="LightDarkToggle(this)">Dark</button>
 </div>
 
 <div id="Intro Page" class="w3-container tab">
@@ -120,6 +134,12 @@ function Tab(tabName) {
     x[i].style.display = "none";  
   }
   document.getElementById(tabName).style.display = "block";  
+}
+function LightDarkToggle(ld) {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  let txt = ld.innerText;
+  ld.innerText = txt == 'Dark' ? 'Light' : 'Dark';
 }
 </script>
 
